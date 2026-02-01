@@ -1,52 +1,36 @@
-import unittest
-# from main import add, subtract, multiply, divide
+import pytest
+from main import isPalindrome
 # from main import check
-from main import divide
 
-# class TestMath(unittest.TestCase):
-#     def test_add(self):
-#         self.assertEqual(add(2, 5), 7)
-#         self.assertEqual(add(2, 5), 9)
+
+
+# def tets_check():
+#     assert check(6) == True
 #
-#     def test_subtract(self):
-#         self.assertEqual(subtract(7, 5), 2)
-#         self.assertEqual(subtract(15, 5), 4)
+# def tets_check2():
+#     assert check(3) == False
 #
-#     def test_multiply(self):
-#         self.assertEqual(multiply(7, 5), 35)
-#         self.assertEqual(multiply(15, 5), 4)
+# @pytest.mark.parametrize('number, expected', [
+#     (2, True),
+#     (5, False),
+#     (0, True),
+#     (56, True),
+#     (-3, False)
+# ])
 #
-#     def test_divide(self):
-#         self.assertEqual(divide(10, 5), 2)
-#         self.assertEqual(divide(15, 5), 4)
+# def test_check_with_params(number, expected):
+#     assert check(number) == expected
 
+# def test_isPalindrome():
+#     assert isPalindrome('madam') == True
+#     assert isPalindrome('hello') == False
 
+@pytest.mark.parametrize("test_input,expected", [
+    ('level', True),
+    ('python', False),
+    ('racecar', True),
+    ('', True),
+])
 
-# class TestCheck(unittest.TestCase):
-#     def test_check(self):
-#         self.assertTrue(check(2))
-#         self.assertTrue(check(5))
-#         self.assertTrue(check(50))
-#
-#         self.assertTrue(not check(1))
-#         self.assertTrue(not check(3))
-#         self.assertTrue(not check(57))
-#
-#         self.assertFalse(not check(1))
-#         self.assertFalse(not check(3))
-#         self.assertFalse(not check(57))
-
-
-class TestDivide(unittest.TestCase):
-    def test_divide(self):
-        self.assertEqual(divide(10, 2), 5)
-        self.assertEqual(divide(6, 3), 2)
-        self.assertEqual(divide(70, 2), 35)
-
-    def test_divide_by_zero(self):
-        self.assertRaises(ValueError, divide, 6, 0)
-
-
-
-if __name__ == '__main__':
-    unittest.main()
+def test_isPalindrome(test_input, expected):
+    assert isPalindrome(test_input) == expected

@@ -1,21 +1,9 @@
-# def add(a, b):
-#     return a + b
-#
-# def subtract(a, b):
-#     return a - b
-#
-# def multiply(a, b):
-#     return a * b
-#
-# def divide(a, b):
-#     return a / b
+
+def check(number):
+     return number % 2 == 0
 
 
-# def check(number):
-#     return number % 2 == 0
 
 
-def divide(a, b):
-    if b == 0:
-        raise ValueError('На ноль делить нельзя')
-    return  a / b
+def isPalindrome(s): # переменная, в которую передаем слово
+    return s == s[::-1] # переворачиваем слово
