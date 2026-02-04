@@ -2,7 +2,7 @@ import pytest
 # from main import isPalindrome
 # from main import sort_list
 # from main import check
-from main import init_db, add_user, get_user
+from main_ATo2_pytest import init_db, add_user, get_user
 
 
 
